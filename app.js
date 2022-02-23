@@ -10,8 +10,11 @@ let port = process.env.PORT || 80
 
 
 
+// app.get('/', (req, res) => {
+//     res.redirect('/index.html')
+// })
 app.get('/', (req, res) => {
-    res.redirect('/index.html')
+    res.sendFile(path.resolve(__dirname + `/index.html`))
 })
 
 app.get('*', (req, res) => {
